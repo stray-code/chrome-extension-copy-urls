@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+}
+
+div {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+button {
+  width: 100%;
+  text-align: left;
+  padding: 0.5em 1em;
+  white-space: nowrap;
+  border: none;
+  font-size: 12px;
+  background: transparent;
+  color: #333;
+
+  &:hover {
+    background: #f2f2f2;
+  }
+}
