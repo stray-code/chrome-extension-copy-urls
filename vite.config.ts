@@ -5,7 +5,7 @@ const manifest = defineManifest({
   manifest_version: 3,
   name: "全てのタブのURLをコピー",
   description: "全てのタブのURLをコピーします。",
-  version: "1.0.0",
+  version: "1.0.1",
   icons: {
     16: "img/icon16.png",
     48: "img/icon48.png",
