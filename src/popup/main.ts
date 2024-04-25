@@ -22,6 +22,9 @@ const App = () => {
 
           await navigator.clipboard.writeText(urlsText);
 
+          // すぐにウィンドウを閉じるとコピーできない場合があるため、待つ
+          await new Promise((resolve) => setTimeout(resolve, 10));
+
           window.close();
         },
       },
@@ -39,6 +42,9 @@ const App = () => {
           const titlesText = tabs.map((tab) => tab.title).join("\n");
 
           await navigator.clipboard.writeText(titlesText);
+
+          // すぐにウィンドウを閉じるとコピーできない場合があるため、待つ
+          await new Promise((resolve) => setTimeout(resolve, 10));
 
           window.close();
         },
@@ -60,6 +66,9 @@ const App = () => {
 
           await navigator.clipboard.writeText(titlesText);
 
+          // すぐにウィンドウを閉じるとコピーできない場合があるため、待つ
+          await new Promise((resolve) => setTimeout(resolve, 10));
+
           window.close();
         },
       },
@@ -80,6 +89,9 @@ const App = () => {
 
           await navigator.clipboard.writeText(urlsText);
 
+          // すぐにウィンドウを閉じるとコピーできない場合があるため、待つ
+          await new Promise((resolve) => setTimeout(resolve, 10));
+
           window.close();
         },
       },
@@ -96,6 +108,9 @@ const App = () => {
           const titlesText = tabs.map((tab) => tab.title).join("\n");
 
           await navigator.clipboard.writeText(titlesText);
+
+          // すぐにウィンドウを閉じるとコピーできない場合があるため、待つ
+          await new Promise((resolve) => setTimeout(resolve, 10));
 
           window.close();
         },
@@ -115,6 +130,9 @@ const App = () => {
             .join("\n");
 
           await navigator.clipboard.writeText(titlesText);
+
+          // すぐにウィンドウを閉じるとコピーできない場合があるため、待つ
+          await new Promise((resolve) => setTimeout(resolve, 10));
 
           window.close();
         },
