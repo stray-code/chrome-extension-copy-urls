@@ -5,6 +5,15 @@ import "./style.css";
 const App = () => {
   const { div, button } = van.tags;
 
+  const copyClipboard = async (text: string) => {
+    await navigator.clipboard.writeText(text);
+
+    // すぐにウィンドウを閉じるとコピーできない場合があるため、待つ
+    await new Promise((resolve) => setTimeout(resolve, 10));
+
+    window.close();
+  };
+
   return div(
     {
       class: "wrapper",
@@ -20,12 +29,7 @@ const App = () => {
 
           const urlsText = tabs.map((tab) => tab.url).join("\n");
 
-          await navigator.clipboard.writeText(urlsText);
-
-          // すぐにウィンドウを閉じるとコピーできない場合があるため、待つ
-          await new Promise((resolve) => setTimeout(resolve, 10));
-
-          window.close();
+          await copyClipboard(urlsText);
         },
       },
       "表示タブのURLをコピー",
@@ -41,12 +45,7 @@ const App = () => {
 
           const titlesText = tabs.map((tab) => tab.title).join("\n");
 
-          await navigator.clipboard.writeText(titlesText);
-
-          // すぐにウィンドウを閉じるとコピーできない場合があるため、待つ
-          await new Promise((resolve) => setTimeout(resolve, 10));
-
-          window.close();
+          await copyClipboard(titlesText);
         },
       },
       "表示タブのタイトルをコピー",
@@ -64,12 +63,7 @@ const App = () => {
             .flatMap((tab) => [tab.title, tab.url])
             .join("\n");
 
-          await navigator.clipboard.writeText(titlesText);
-
-          // すぐにウィンドウを閉じるとコピーできない場合があるため、待つ
-          await new Promise((resolve) => setTimeout(resolve, 10));
-
-          window.close();
+          await copyClipboard(titlesText);
         },
       },
       "表示タブのタイトルとURLをコピー",
@@ -87,12 +81,7 @@ const App = () => {
 
           const urlsText = tabs.map((tab) => tab.url).join("\n");
 
-          await navigator.clipboard.writeText(urlsText);
-
-          // すぐにウィンドウを閉じるとコピーできない場合があるため、待つ
-          await new Promise((resolve) => setTimeout(resolve, 10));
-
-          window.close();
+          await copyClipboard(urlsText);
         },
       },
       "全てのタブのURLをコピー",
@@ -107,12 +96,7 @@ const App = () => {
 
           const titlesText = tabs.map((tab) => tab.title).join("\n");
 
-          await navigator.clipboard.writeText(titlesText);
-
-          // すぐにウィンドウを閉じるとコピーできない場合があるため、待つ
-          await new Promise((resolve) => setTimeout(resolve, 10));
-
-          window.close();
+          await copyClipboard(titlesText);
         },
       },
       "全てのタブのタイトルをコピー",
@@ -129,12 +113,7 @@ const App = () => {
             .flatMap((tab) => [tab.title, tab.url])
             .join("\n");
 
-          await navigator.clipboard.writeText(titlesText);
-
-          // すぐにウィンドウを閉じるとコピーできない場合があるため、待つ
-          await new Promise((resolve) => setTimeout(resolve, 10));
-
-          window.close();
+          await copyClipboard(titlesText);
         },
       },
       "全てのタブのタイトルとURLをコピー",
