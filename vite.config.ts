@@ -3,8 +3,8 @@ import { crx, defineManifest } from "@crxjs/vite-plugin";
 
 const manifest = defineManifest({
   manifest_version: 3,
-  name: "全てのタブのURLをコピー",
-  description: "全てのタブのURLをコピーします。",
+  name: "タブのタイトルとURLをコピー",
+  description: "タブのタイトルとURLをコピーします。",
   version: "1.0.1",
   icons: {
     16: "img/icon16.png",
