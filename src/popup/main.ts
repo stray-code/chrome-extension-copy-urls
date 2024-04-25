@@ -14,6 +14,62 @@ const App = () => {
         type: "button",
         onclick: async () => {
           const tabs = await chrome.tabs.query({
+            active: true,
+            currentWindow: true,
+          });
+
+          const urlsText = tabs.map((tab) => tab.url).join("\n");
+
+          await navigator.clipboard.writeText(urlsText);
+
+          window.close();
+        },
+      },
+      "表示タブのURLをコピー",
+    ),
+    button(
+      {
+        type: "button",
+        onclick: async () => {
+          const tabs = await chrome.tabs.query({
+            active: true,
+            currentWindow: true,
+          });
+
+          const titlesText = tabs.map((tab) => tab.title).join("\n");
+
+          await navigator.clipboard.writeText(titlesText);
+
+          window.close();
+        },
+      },
+      "表示タブのタイトルをコピー",
+    ),
+    button(
+      {
+        type: "button",
+        onclick: async () => {
+          const tabs = await chrome.tabs.query({
+            active: true,
+            currentWindow: true,
+          });
+
+          const titlesText = tabs
+            .flatMap((tab) => [tab.title, tab.url])
+            .join("\n");
+
+          await navigator.clipboard.writeText(titlesText);
+
+          window.close();
+        },
+      },
+      "表示タブのタイトルとURLをコピー",
+    ),
+    button(
+      {
+        type: "button",
+        onclick: async () => {
+          const tabs = await chrome.tabs.query({
             currentWindow: true,
           });
 
