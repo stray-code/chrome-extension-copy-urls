@@ -6,6 +6,9 @@ const App = () => {
   const { div, button } = van.tags;
 
   return div(
+    {
+      class: "wrapper",
+    },
     button(
       {
         type: "button",
