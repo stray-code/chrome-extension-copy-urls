@@ -65,6 +65,9 @@ const App = () => {
       },
       "表示タブのタイトルとURLをコピー",
     ),
+    div({
+      class: "divider",
+    }),
     button(
       {
         type: "button",
